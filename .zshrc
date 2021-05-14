@@ -5,16 +5,17 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+autoload bashcompinit && bashcompinit -u
+autoload -Uz compinit && compinit -u
+zstyle ':completion:*' menu select
+
 export ANTIGEN_INIT="$HOME/.antigen.zsh"
 if [[ ! -f $ANTIGEN_INIT ]]; then
   echo "downloading antigen"
-  curl -L git.io/antigen > "$ANTIGEN_INIT"
+  curl -L git.io/antigen-nightly > "$ANTIGEN_INIT"
 fi
+export ANTIGEN_COMPINIT_OPTS="-u"
 source "$ANTIGEN_INIT"
-
-autoload bashcompinit && bashcompinit
-autoload -Uz compinit && compinit
-zstyle ':completion:*' menu select
 
 antigen bundle zsh-users/zsh-autosuggestions
 antigen theme romkatv/powerlevel10k
@@ -29,3 +30,4 @@ export SDKMAN_DIR="/Users/evan.mcquinn/.sdkman"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+

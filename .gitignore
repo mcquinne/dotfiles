@@ -1,0 +1,80 @@
+# Ignore these files in git
+
+# compiled source
+*.o
+*.a
+*.so
+*.so.*
+*.dylib
+*.la
+*.ko
+*.obj
+*.elf
+*.class
+*.pyc
+*.pyo
+*.pyd
+*.exe
+*.dll
+*.com
+
+# log files
+*.log
+
+# vim generated files
+*.swp
+*.swo
+
+# archive and package files
+*.gz
+*.7z
+*.bz2
+*.tar
+*.tgz
+*.rar
+*.zip
+*.dmg
+*.xz
+*.iso
+*.jar
+*.war
+*.ear
+*.nar
+*.msi
+*.rpm
+*.apk
+*.deb
+*.egg
+*.eggs
+*.gem
+
+# R flotsam
+.Rhistory
+.Rapp.history
+.RData
+.Ruserdata
+.Rproj.user/
+*.utf8.md
+*.knit.md
+/*_cache/
+/cache/
+/*.Rcheck/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Terraform
+.terraform/
+*.tfstate*
+
+# Misc
+hs_err_pid*
+.vagrant
+.kitchen/
+.kitchen.local.yml

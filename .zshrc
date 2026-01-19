@@ -1,3 +1,6 @@
+# we're zsh
+export MYSHELL='zsh'
+
 # No beeps
 unsetopt BEEP
 

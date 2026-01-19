@@ -1,4 +1,5 @@
 brew "bash"
 brew "git"
 brew "git-lfs"
+brew "mise"
 cask "ghostty"

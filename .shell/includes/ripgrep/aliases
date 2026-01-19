@@ -1,0 +1,7 @@
+#
+
+# use ripgrep instead of grep
+if command -v rg >& /dev/null; then
+  alias Grep="grep" # og grep
+  alias grep="rg"
+fi

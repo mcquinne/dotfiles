@@ -1,0 +1,7 @@
+#
+# use fd instead of find if available
+# original find aliased as Find
+if command -v fd >& /dev/null; then
+  alias Find="\find" # og find
+  alias find="fd"
+fi

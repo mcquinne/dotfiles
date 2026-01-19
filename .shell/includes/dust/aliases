@@ -1,0 +1,7 @@
+#
+
+# use dust instead of du
+if command -v dust >& /dev/null; then
+  alias Du="du" # og du
+  alias du="dust"
+fi

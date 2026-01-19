@@ -1,0 +1,198 @@
+format = """$username\
+$hostname\
+${env_var.MYSHELL}\
+$shlvl\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$docker_context\
+$package\
+$c\
+$golang\
+$java\
+$julia\
+$gradle\
+$nodejs\
+$perl\
+$php\
+$python\
+$rlang\
+$ruby\
+$rust\
+$terraform\
+$vagrant\
+$line_break\
+$container\
+$nix_shell\
+$character"""
+
+continuation_prompt = "[ ](bright-white) "
+right_format = """$status"""
+
+[aws]
+disabled = true
+
+[cmd_duration]
+disabled = true
+
+[directory]
+style = "bold fg:33"
+read_only = ""
+home_symbol = "󰜥 "
+truncation_symbol = "/"
+truncation_length = 3
+
+[username]
+show_always = true
+style_user = 'fg:2'
+style_root = "bold red"
+format = "[$user]($style)"
+
+[hostname]
+ssh_only = false
+format = "[](fg:11)[$hostname](bold fg:10) "
+trim_at = "."
+
+[env_var.MYSHELL]
+disabled = false
+default = ''
+variable = "MYSHELL_SYMBOL"
+style = "fg:243"
+format = "[$env_value ]($style)"
+
+[shlvl]
+disabled = false
+symbol = ''
+threshold = 2
+style = 'bold yellow'
+format = '[$symbol$shlvl]($style) '
+
+[character]
+success_symbol = "[](bold green)"
+error_symbol = "[](bold fg:160)"
+
+[c]
+symbol = " "
+style = "fg:149"
+
+#[fortran]
+#symbol = " "
+#style = "fg:149"
+
+[python]
+symbol = "󰌠 "
+style = 'fg:11'
+
+[nodejs]
+symbol = " "
+style = "fg:34"
+
+[golang]
+symbol = " "
+style = "fg:73"
+
+[java]
+symbol = " "
+style = "fg:69"
+
+[julia]
+symbol = " "
+style = "fg:60"
+
+[gradle]
+symbol = " "
+style = "fg:69"
+
+[php]
+symbol = " "
+style = "fg:151"
+
+[perl]
+symbol = " "
+style = "fg:117"
+
+[ruby]
+symbol = " "
+style = "fg:126"
+
+[rust]
+symbol = " "
+style = "fg:166"
+
+[rlang]
+symbol = " "
+style = "fg:60"
+
+[terraform]
+symbol = " "
+style = "fg:99"
+
+[helm]
+disabled = true
+symbol = " "
+style = "fg:250"
+
+[docker_context]
+symbol = "  "
+style = "bold fg:75"
+
+[container]
+symbol = "󰆧"
+style = "fg:226"
+format = "[$symbol $name ]($style)"
+
+[git_status]
+style = "bold 207"
+conflicted = '󰉀 '
+ahead = " "
+behind = " "
+diverged = " "
+up_to_date = ''
+untracked = " "
+stashed = '󱧘 '
+modified = ' '
+staged = ' '
+renamed = " "
+deleted = "󰗨 "
+typechanged = " "
+format = '[$all_status$ahead_behind]($style) '
+
+[git_state]
+style = "bold 207"
+
+[git_commit]
+style = "bold 207"
+
+[git_branch]
+style = "bold 207"
+symbol = " "
+format = '[$symbol$branch(:$remote_branch)]($style) '
+truncation_length = 10
+truncation_symbol = ""
+
+#[shell]
+#disabled = false
+#fish_indicator = '󰈺'
+#powershell_indicator = ''
+#zsh_indicator = '󰰸'
+#bash_indicator = '󰯮'
+#nu_indicator = '󰰓'
+#style = 'fg:243'
+
+[nix_shell]
+symbol = '󱄅'
+style = 'fg:14'
+format = "[$symbol $state $name ]($style)"
+
+[vagrant]
+symbol = " "
+style = "fg:99"
+
+[status]
+disabled = false
+symbol = "󱐋"
+style = 'bold fg:160'
+format = "[$symbol $status]($style)"

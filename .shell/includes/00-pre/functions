@@ -1,0 +1,43 @@
+# what distro are we?
+distro() {
+  if [ -e /etc/os-release ]; then
+    . /etc/os-release
+  fi
+
+  if [ -n "$ID" ]; then
+    # distro defined in /etc/os-release $ID variable
+    echo $ID
+  elif uname -a | grep 'Linux' > /dev/null; then
+    # we're some flavor of linux
+    echo linux
+  elif echo "$OSTYPE" | grep 'darwin' > /dev/null; then
+    # we're MacOS (darwin)
+    echo darwin
+  else
+    # we don't know
+    echo unknown
+  fi
+}
+
+# what major version are we?
+version() {
+  if [ -e /etc/os-release ]; then
+    . /etc/os-release
+  fi
+
+  if [ -n "$VERSION_ID" ]; then
+    # version defined in /etc/os-release
+    echo $VERSION_ID
+  elif [ -n "$(command -v sw_vers)" ]; then
+    # version defined by MacOS sw_vers command
+    echo $(sw_vers -productVersion)
+  else
+    # we don't know
+    echo unknown
+  fi
+}
+
+# platform
+platform() {
+  echo $(distro) $(version)
+}

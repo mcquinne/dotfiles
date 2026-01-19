@@ -1,0 +1,3 @@
+brew "bash"
+brew "git"
+brew "git-lfs"

@@ -1,0 +1,13 @@
+# Do not use brew to manage packages that can be managed by
+# mise or have their own management systems
+export HOMEBREW_BUNDLE_DUMP_NO_CARGO=1
+export HOMEBREW_BUNDLE_DUMP_NO_GO=1
+export HOMEBREW_BUNDLE_DUMP_NO_VSCODE=1
+
+# Use XDG config for global Brewfile
+export HOMEBREW_BUNDLE_FILE_GLOBAL="${XDG_CONFIG_HOME}/homebrew/Brewfile"
+
+# Activate brew
+if command -v brew >& /dev/null; then
+  eval "$(brew shellenv)"
+fi

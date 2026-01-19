@@ -1,3 +1,8 @@
+# interact with dotfiles
+dotfiles() {
+  git --git-dir=$HOME/.dotfiles --work-tree=$HOME $@
+}
+
 # what distro are we?
 distro() {
   if [ -e /etc/os-release ]; then

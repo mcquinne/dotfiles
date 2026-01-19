@@ -1,0 +1,8 @@
+[tools]
+fd = "latest"
+k9s = "latest"
+node = "latest"
+ripgrep = "latest"
+starship = "latest"
+uv = "latest"
+

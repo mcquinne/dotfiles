@@ -1,6 +1,7 @@
 [tools]
 dust = "latest"
 fd = "latest"
+jq = "latest"
 k9s = "latest"
 node = "latest"
 ripgrep = "latest"

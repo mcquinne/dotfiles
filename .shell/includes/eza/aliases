@@ -1,0 +1,22 @@
+#
+## use eza instead of ls if available
+# original ls aliased as Ls
+
+if command -v eza >& /dev/null; then
+  alias Ls="\ls" # og ls
+  alias ls="eza --git --color=auto --icons=auto"
+  alias ll="eza -lg --git --color=auto --icons=auto"
+  alias la="eza -lga --git --color=auto --icons=auto"
+  alias lT="eza -lgT --git --color=auto --icons=auto"
+  alias laT="eza -lgaT --git --color=auto --icons=auto"
+  alias lu="eza -lg -s accesed -r --git --color=auto --icons=auto"
+  alias lm="eza -lg -s modified -r --git --color=auto --icons=auto"
+  alias lc="eza -lg -s created -r --git --color=auto --icons=auto"
+  alias lz="eza -lgZ -s created -r --git --color=auto --icons=auto"
+
+  # plain ls
+  alias lsp="eza --color=never --icons=never"
+
+  # tree replacement
+  alias tree='eza --tree --color=auto --icons=auto'
+fi

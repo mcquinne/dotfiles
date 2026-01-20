@@ -1,5 +1,6 @@
 [tools]
 dust = "latest"
+eza = "latest"
 fd = "latest"
 jq = "latest"
 k9s = "latest"

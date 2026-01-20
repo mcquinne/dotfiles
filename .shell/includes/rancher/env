@@ -1,0 +1,6 @@
+# add rancher commands to path
+if [ -d "$HOME/.rd/bin" ]; then
+  path-prepend "$HOME/.rd/bin"
+
+  eval "$(rdctl completion $MYSHELL)"
+fi

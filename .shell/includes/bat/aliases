@@ -1,0 +1,7 @@
+#
+## use bat instead of cat if available
+# original cat aliased as Cat
+if command -v bat >& /dev/null; then
+  alias Cat="\cat"  # og cat
+  alias cat="bat -Pp"
+fi

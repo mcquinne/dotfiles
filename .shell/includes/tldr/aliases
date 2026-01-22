@@ -1,0 +1,6 @@
+# Use tldr instead of man if available
+# original man aliased as Man
+if command -v tldr >& /dev/null; then
+  alias Man="\man" # og man
+  alias man="tldr"
+fi

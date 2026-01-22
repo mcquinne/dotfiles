@@ -1,0 +1,6 @@
+# Use procs instead of ps if available
+# original ps aliased as Ps
+if command -v procs >& /dev/null; then
+  alias Ps="\Ps" # og ps
+  alias ps="procs"
+fi

@@ -1,10 +1,13 @@
 [tools]
+bat = "latest"
 dust = "latest"
 eza = "latest"
 fd = "latest"
 jq = "latest"
 k9s = "latest"
 node = "lts"
+procs = "latest"
 ripgrep = "latest"
 starship = "latest"
+tlrc = "latest"
 uv = "latest"

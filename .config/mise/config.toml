@@ -6,7 +6,11 @@ fd = "latest"
 jq = "latest"
 k9s = "latest"
 node = "lts"
+"npm:@googleworkspace/cli" = "latest"
 ripgrep = "latest"
 starship = "latest"
 tlrc = "latest"
 uv = "latest"
+
+[settings]
+experimental = true

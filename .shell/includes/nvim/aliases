@@ -1,0 +1,6 @@
+# Use nvim instead of vim if available
+# original vim aliased as Vim
+if command -v nvim >& /dev/null; then
+  alias Vim="\vim" # og vim
+  alias vim="nvim"
+fi

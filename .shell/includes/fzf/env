@@ -1,0 +1,97 @@
+#
+
+# fzf environment settings
+
+# look for fzf in the usual spots, most specific is last
+path-prepend $HOME/.nix-profile/bin $HOME/.fzf/bin $HOME/.local/bin
+
+if command -v bat >& /dev/null; then
+  PREVIEW_FILE="bat --style=numbers --color=always --line-range :100 {}"
+else
+  PREVIEW_FILE="cat {} | head -100"
+fi
+
+if command -v eza >& /dev/null; then
+  PREVIEW_DIR="eza --tree --color=always --icons=always {} | head -100"
+elif command -v tree >& /dev/null; then
+  PREVIEW_DIR="tree {} | head -100"
+else
+  PREVIEW_DIR="echo {}"
+fi
+
+if command -v fd >& /dev/null; then
+  # Set fd as the default source for fzf
+  export FZF_DEFAULT_COMMAND='fd --strip-cwd-prefix --hidden --exclude .git'
+  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+fi
+
+export FZF_CTRL_T_OPTS="
+  --walker-skip .git
+  --preview 'if [ -d {} ]; then $PREVIEW_DIR; else $PREVIEW_FILE; fi'"
+
+FZF_OPTS_BASE="
+  --height=33%
+  --layout='reverse'
+  --border='rounded'
+  --border-label='fzf'
+  --border-label-pos='0'
+  --preview-window='border-rounded'
+  --color=fg:#8d8d8d,fg+:#ffffff,bg:#000000,bg+:#262626
+  --color=hl:#a0d3ff,hl+:#0087ff,info:#ffff00,marker:#0087ff
+  --color=prompt:#ff0000,spinner:#0087ff,pointer:#0087ff,header:#0087ff
+  --color=border:#262626,label:#8d8d8d,query:#8d8d8d"
+
+export FZF_OPTS_NF="
+  $FZF_OPTS_BASE
+  --scrollbar='│'
+  --prompt=' '
+  --marker=''
+  --pointer=''
+  --separator=''"
+
+export FZF_OPTS_NO_NF="
+  $FZF_OPTS_BASE
+  --scrollbar='|'
+  --prompt='> '
+  --marker='+'
+  --pointer='>'
+  --separator='-'"
+
+export FZF_DEFAULT_OPTS=$FZF_OPTS_NF
+
+# Use ~~ as the trigger sequence instead of the default **
+export FZF_COMPLETION_TRIGGER='~~'
+
+# Advanced customization of fzf options via _fzf_comprun function
+# - The first argument to the function is the name of the command.
+# - You should make sure to pass the rest of the arguments ($@) to fzf.
+
+# initalize fzf
+if command -v fzf >& /dev/null; then
+  case $MYSHELL in
+     bash)
+        eval "$(fzf --bash)"
+        ;;
+      zsh)
+        source <(fzf --zsh)
+        ;;
+      fish)
+        fzf --fish | source
+        ;;
+    esac
+fi
+
+# Advanced customization of fzf options via _fzf_comprun function
+# - The first argument to the function is the name of the command.
+# - You should make sure to pass the rest of the arguments ($@) to fzf.
+#_fzf_comprun() {
+#  local command=$1
+#  shift
+#
+#  case "$command" in
+#    cd)           fzf --preview 'tree -C {} | head -200'   "$@" ;;
+#    export|unset) fzf --preview "eval 'echo \$'{}"         "$@" ;;
+#    ssh)          fzf --preview 'dig {}'                   "$@" ;;
+#    *)            fzf --preview 'bat -n --color=always {}' "$@" ;;
+#  esac
+#}

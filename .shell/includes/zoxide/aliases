@@ -1,0 +1,6 @@
+# use zoxide for cd if available
+# original cd aliased as Cd
+if command -v z >& /dev/null; then
+  alias Cd="\cd" # og cd
+  alias cd="z"
+fi

@@ -3,6 +3,7 @@ bat = "latest"
 dust = "latest"
 eza = "latest"
 fd = "latest"
+fzf = "latest"
 jq = "latest"
 k9s = "latest"
 neovim = "latest"
@@ -12,6 +13,7 @@ ripgrep = "latest"
 starship = "latest"
 tlrc = "latest"
 uv = "latest"
+zoxide = "latest"
 
 [settings]
 experimental = true

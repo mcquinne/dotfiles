@@ -1,6 +1,15 @@
+brew "ca-certificates"
 brew "bash"
 brew "git"
 brew "git-lfs"
 brew "mise"
+brew "openssl@3"
+
+cask "1password"
+cask "1password-cli"
+cask "firefox"
 cask "ghostty"
+cask "obsidian"
+cask "opensc-app"
 cask "rancher"
+

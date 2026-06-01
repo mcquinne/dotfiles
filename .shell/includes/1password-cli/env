@@ -1,0 +1,4 @@
+# setup 1password completion
+if command -v op >& /dev/null; then
+  eval "$(op completion $MYSHELL)"
+fi

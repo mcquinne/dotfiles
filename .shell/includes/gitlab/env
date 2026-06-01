@@ -1,4 +1,4 @@
 # setup gitlab completion
 if command -v glab >& /dev/null; then
-  eval "$(glab completion --shell $SHELL)"
+  eval "$(glab completion --shell $MYSHELL)"
 fi

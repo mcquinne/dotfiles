@@ -1,4 +1,4 @@
 # setup github completion
 if command -v gh >& /dev/null; then
-  eval "$(gh completion --shell $SHELL)"
+  eval "$(gh completion --shell $MYSHELL)"
 fi

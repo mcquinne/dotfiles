@@ -6,10 +6,9 @@ brew "mise"
 brew "openssl@3"
 
 cask "1password"
-cask "1password-cli"
 cask "firefox"
 cask "ghostty"
+cask "miro"
 cask "obsidian"
-cask "opensc-app"
 cask "rancher"
-
+cask "zed"

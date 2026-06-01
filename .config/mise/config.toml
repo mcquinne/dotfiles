@@ -1,9 +1,13 @@
 [tools]
+1password-cli = "latest"
+aws = { version = "latest", symlink_bins = "true" }
 bat = "latest"
 dust = "latest"
 eza = "latest"
 fd = "latest"
 fzf = "latest"
+github-cli = "latest"
+glab = "latest"
 jq = "latest"
 k9s = "latest"
 neovim = "latest"
